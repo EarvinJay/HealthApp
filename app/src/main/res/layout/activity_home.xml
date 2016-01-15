@@ -8,6 +8,80 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="oxiorapp.healthapp.home"
-    android:background="#12ff45">
+    android:background="#19aa38"
+    android:focusable="false"
+    android:visibility="visible">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/txtdate"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtweight"
+        android:layout_below="@+id/txtdate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtheight"
+        android:layout_below="@+id/txtweight"
+        android:layout_alignRight="@+id/txtbloodtype"
+        android:layout_alignEnd="@+id/txtbloodtype"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtbloodtype"
+        android:layout_below="@+id/txtheight"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/txtallergies"
+        android:layout_alignEnd="@+id/txtallergies" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtallergies"
+        android:layout_below="@+id/txtbloodtype"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtfoodpref"
+        android:layout_alignLeft="@+id/txtallergies"
+        android:layout_alignStart="@+id/txtallergies"
+        android:layout_below="@+id/txtallergies"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtweightobj"
+        android:layout_below="@+id/txtfoodpref"
+        android:layout_alignLeft="@+id/txtfoodpref"
+        android:layout_alignStart="@+id/txtfoodpref"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
