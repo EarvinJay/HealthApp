@@ -26,11 +26,15 @@ EditText username,password;
 
     public void login(View view)
     {
-
             Intent intent = new Intent(this, home.class);
             startActivity(intent);
-
-
     }
+
+    public void onSignUp(View view)
+    {
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+    }
+
 
 }
