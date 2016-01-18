@@ -28,8 +28,7 @@
         android:ems="10"
         android:id="@+id/txtusername"
         android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -37,9 +36,9 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/txtpassword"
+        android:hint="Password"
         android:layout_below="@+id/txtusername"
-        android:layout_centerHorizontal="true"
-        android:hint="Password"/>
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
