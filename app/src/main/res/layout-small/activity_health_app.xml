@@ -11,59 +11,55 @@
     android:background="#19AA38">
 
     <ImageView
-        android:layout_width="450dp"
-        android:layout_height="450dp"
-        android:id="@+id/imageView2"
-        android:scaleType="center"
-        android:src="@mipmap/icona"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:id="@+id/imageView"
+        android:background="@mipmap/icona"
+        android:gravity="center"
+        android:textAlignment="center"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="93dp" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
-        android:layout_width="450dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtusername"
+        android:inputType="textPersonName"
         android:hint="Username"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
-        android:textSize="50sp"/>
+        android:ems="10"
+        android:id="@+id/txtusername"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
     <EditText
-        android:layout_width="450dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
         android:id="@+id/txtpassword"
         android:hint="Password"
-        android:textSize="50sp"
-        android:inputType="textPassword"
         android:layout_below="@+id/txtusername"
-        android:layout_alignLeft="@+id/txtusername"
-        android:layout_alignStart="@+id/txtusername" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="50sp"
+        android:text="Log-in"
         android:id="@+id/login"
         android:layout_below="@+id/txtpassword"
-        android:layout_alignLeft="@+id/txtpassword"
-        android:layout_alignStart="@+id/txtpassword"
-        android:layout_alignRight="@+id/txtpassword"
-        android:layout_alignEnd="@+id/txtpassword" />
+        android:layout_centerHorizontal="true"
+        android:onClick="login"/>
 
     <Button
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SIGN-UP"
-        android:textSize="50sp"
         android:id="@+id/button"
         android:layout_below="@+id/login"
+        android:layout_alignLeft="@+id/login"
+        android:layout_alignStart="@+id/login"
         android:layout_alignRight="@+id/login"
         android:layout_alignEnd="@+id/login"
-        android:layout_alignLeft="@+id/login"
-        android:layout_alignStart="@+id/login" />
-
+        android:onClick="onSignUp"/>
 
 </RelativeLayout>
