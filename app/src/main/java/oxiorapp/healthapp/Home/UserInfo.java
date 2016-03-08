@@ -1,9 +1,11 @@
-package oxiorapp.healthapp;
+package oxiorapp.healthapp.Home;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import oxiorapp.healthapp.R;
 
 public class UserInfo extends AppCompatActivity {
     String dates,weights,heights,bloodtypes,allergy,foodprefs,weightobjs;

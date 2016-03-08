@@ -1,4 +1,4 @@
-package oxiorapp.healthapp;
+package oxiorapp.healthapp.Home;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import oxiorapp.healthapp.R;
+
 /**
  * Created by BSIT on 1/15/2016.
  */
