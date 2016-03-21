@@ -28,17 +28,17 @@ public class UserInfo extends AppCompatActivity {
 
         txtdate=(TextView) findViewById(R.id.date);
         txtdate.setText(dates);
-        txtweight=(TextView) findViewById(R.id.date);
+        txtweight=(TextView) findViewById(R.id.weight);
         txtweight.setText(weights);
-        txtheight=(TextView) findViewById(R.id.date);
+        txtheight=(TextView) findViewById(R.id.height);
         txtheight.setText(heights);
-        txtbloodtype=(TextView) findViewById(R.id.date);
+        txtbloodtype=(TextView) findViewById(R.id.bloodtype);
         txtbloodtype.setText(bloodtypes);
-        txtallergies=(TextView) findViewById(R.id.date);
+        txtallergies=(TextView) findViewById(R.id.allergy);
         txtallergies.setText(allergy);
-        txtfoodpref=(TextView) findViewById(R.id.date);
+        txtfoodpref=(TextView) findViewById(R.id.foodpref);
         txtfoodpref.setText(foodprefs);
-        txtweightobj=(TextView) findViewById(R.id.date);
+        txtweightobj=(TextView) findViewById(R.id.weightobj);
         txtweightobj.setText(weightobjs);
 
 

@@ -5,25 +5,37 @@
         android:smallScreens="true"
         android:normalScreens="true"
         android:largeScreens="true"
-        android:anyDensity="true" />
+        android:anyDensity="true"
+        />
 
 
     <application
+        android:screenOrientation="locked"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icona"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home.HealthApp">
+        <activity android:name="oxiorapp.healthapp.SplashScreen"
+            android:screenOrientation="locked">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"  />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Home.home"></activity>
-
-        <activity android:name=".Home.SignupActivity" android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Home.HealthApp"
+            android:label="@string/app_name"
+            android:screenOrientation="locked">
+        </activity>
+        <activity android:name=".Home.home"
+            android:screenOrientation="locked"></activity>
+        <activity android:name=".Home.SignupActivity"
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Home.UserInfo"
+            android:screenOrientation="locked"/>
     </application>
 
 </manifest>
