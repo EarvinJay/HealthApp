@@ -62,7 +62,7 @@ public class DatabaseAccess {
      */
     public List<String> getQuotes() {
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM quotes", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM Foods", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             list.add(cursor.getString(0));
@@ -71,4 +71,17 @@ public class DatabaseAccess {
         cursor.close();
         return list;
     }
+
+    /*
+    * Getting a single food name
+    * */
+    //public
+
+
+
+
+
+
+
+
 }
