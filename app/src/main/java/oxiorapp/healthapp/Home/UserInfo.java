@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import oxiorapp.healthapp.R;
 
-public class UserInfo extends AppCompatActivity implements View.OnClickListener {
+public class UserInfo extends AppCompatActivity {
     String dates,weights,heights,bloodtypes,allergy,foodprefs,weightobjs;
     TextView txtdate,txtweight,txtheight,txtbloodtype,txtallergies,txtfoodpref,txtweightobj;
     @Override
@@ -44,8 +44,8 @@ public class UserInfo extends AppCompatActivity implements View.OnClickListener 
 
     }
 
-    @Override
-    public void onClick(View v) {
+
+    public void Search(View v) {
         Intent intent = new Intent(this,Search.class);
         intent.putExtra("bloodType",txtbloodtype.getText().toString());
         startActivity(intent);
