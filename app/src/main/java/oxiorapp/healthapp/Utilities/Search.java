@@ -42,9 +42,8 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
 
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
-        String foodAvailability = databaseAccess.getFoodAvailability(food,"A");
+        String foodAvailability = databaseAccess.getFoodAvailability(food);
         databaseAccess.close();
-
         Toast.makeText(Search.this, foodAvailability, Toast.LENGTH_SHORT).show();
 
     }

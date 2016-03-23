@@ -18,16 +18,6 @@ public class DatabaseAccess {
     private static DatabaseAccess instance;
 
 
-
-    // Database Version
-    private static final int DATABASE_VERSION = 1;
-
-    // Database Name
-    private static final String DATABASE_NAME = "FoodDatabase";
-
-    // Contacts table name
-    private static final String TABLE_FOODS = "Foods";
-
     // Contacts Table Columns names
     private static final String KEY_ID = "FOOD_ID";
     private static final String KEY_FOOD_NAME = "FOOD_NAME";
@@ -37,22 +27,11 @@ public class DatabaseAccess {
     private static final String KEY_TYPE_AB="AB";
     private static final String KEY_TYPE_O="O";
 
-
-    /**
-     * Private constructor to avoid object creation from outside classes.
-     *
-     * @param context
-     */
     private DatabaseAccess(Context context) {
         this.openHelper = new DatabaseOpenHelper(context);
     }
 
-    /**
-     * Return a singleton instance of DatabaseAccess.
-     *
-     * @param context the Context
-     * @return the instance of DatabaseAccess
-     */
+
     public static DatabaseAccess getInstance(Context context) {
         if (instance == null) {
             instance = new DatabaseAccess(context);
@@ -60,33 +39,24 @@ public class DatabaseAccess {
         return instance;
     }
 
-//    public DatabaseAccess(Context context){
-//        super(context,DATABASE_NAME,null,DATABASE_VERSION);
-//    }
 
 
 
-    /**
-     * Open the database connection.
-     */
+
+    // Open External Database
     public void open() {
         this.database = openHelper.getWritableDatabase();
     }
 
-    /**
-     * Close the database connection.
-     */
+    // Close External Database
     public void close() {
         if (database != null) {
             this.database.close();
         }
     }
 
-    /**
-     * Read all food from the database.
-     *
-     * @return a List of quotes
-     */
+
+    //Get all the data in the database
     public List<String> getFood() {
         List<String> list = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT * FROM Foods", null);
@@ -99,32 +69,25 @@ public class DatabaseAccess {
         return list;
     }
 
-    /*
-    * Getting a single food name
-    * */
 
-     public String getFoodAvailability(String foods,String bloodType) {
+    // Getting a single food name
+     public String getFoodAvailability(String foods) {
 
-         StringBuilder foodAvailability = new StringBuilder();
          String foodResult;
          int foodIndex;
 
-         Cursor cursor1 = database.rawQuery(
-                     "SELECT TYPE_A FROM Foods WHERE FOOD_NAME = '" + foods + "'",
-                     null);
-
-         cursor1.moveToFirst();
-         while (cursor1.moveToNext()) {
-             foodIndex = cursor1.getColumnIndex(foods);
-             foodResult=cursor1.getString(foodIndex);
+         Cursor cursor = database.rawQuery(
+                 "SELECT TYPE_A FROM Foods WHERE FOOD_NAME = '" + foods + "'",null);
+         cursor.moveToFirst();
+         StringBuffer foodAvailability = new StringBuffer();
+         while (cursor.moveToNext()) {
+             foodIndex = cursor.getColumnIndex(foods);
+             foodResult=cursor.getString(foodIndex);
              foodAvailability.append(foodResult);
 
          }
-         cursor1.close();
+         cursor.close();
          return foodAvailability.toString();
 
      }
-
-
-
 }
