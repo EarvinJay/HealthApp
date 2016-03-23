@@ -20,7 +20,7 @@ import oxiorapp.healthapp.entities.Food;
  * Created by BSIT on 3/23/2016.
  */
 public class Search extends AppCompatActivity implements View.OnClickListener{
-    private ListView listView;
+    ListView mListView;
     EditText mFoodName;
     Button mClickSearch;
 
@@ -31,17 +31,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
 
 
         init();
-        this.listView = (ListView) findViewById(R.id.listView);
-        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-        databaseAccess.open();
-        List<String> quotes = databaseAccess.getFood();
-        databaseAccess.close();
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, quotes);
-        this.listView.setAdapter(adapter);
-
-
-
+        FoodList();
     }
 
     public void showDatabaseAccess(){
@@ -65,6 +55,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
     public void init(){
         mFoodName = (EditText) findViewById(R.id.etFoodName);
         mClickSearch = (Button) findViewById(R.id.btnSearch);
+        mListView = (ListView) findViewById(R.id.listView);
     }
 
 
@@ -72,6 +63,22 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         showDatabaseAccess();
     }
+
+
+    public void FoodList(){
+
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+        databaseAccess.open();
+        List<String> quotes = databaseAccess.getFood();
+        databaseAccess.close();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, quotes);
+        mListView.setAdapter(adapter);
+
+
+    }
+
+
 }
+
 
 
