@@ -1,4 +1,4 @@
-package oxiorapp.healthapp.Home;
+package oxiorapp.healthapp.Utilities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,6 @@ import java.util.List;
 
 import oxiorapp.healthapp.Database.DatabaseAccess;
 import oxiorapp.healthapp.R;
-import oxiorapp.healthapp.entities.Food;
 
 /**
  * Created by BSIT on 3/23/2016.
@@ -41,14 +40,12 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
         String food= mFoodName.getText().toString();
         String bloodType=intent.getStringExtra("bloodType");
 
-
-
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
-        Food person = databaseAccess.getFoodAvailability(food,"A");
+        String foodAvailability = databaseAccess.getFoodAvailability(food,"A");
         databaseAccess.close();
 
-        Toast.makeText(Search.this, person.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(Search.this, foodAvailability, Toast.LENGTH_SHORT).show();
 
     }
 

@@ -1,4 +1,4 @@
-package oxiorapp.healthapp.Home;
+package oxiorapp.healthapp.Utilities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +28,7 @@ EditText username,password;
 
     public void login(View view)
     {
-        Intent intent = new Intent(this, home.class);
+        Intent intent = new Intent(this, Home.class);
 
         username=(EditText) findViewById(R.id.txtusername);
         password=(EditText) findViewById(R.id.txtpassword);

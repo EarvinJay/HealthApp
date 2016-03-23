@@ -1,4 +1,4 @@
-package oxiorapp.healthapp.Home;
+package oxiorapp.healthapp.Utilities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 import oxiorapp.healthapp.R;
 
-public class home extends AppCompatActivity {
+public class Home extends AppCompatActivity {
 
     private EditText date, weight, height, bloodtype, allergies, foodpref, weightobj;
     String dates, weights, heights, bloodtypes, allergy, foodprefs, weightobjs;

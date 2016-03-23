@@ -1,4 +1,4 @@
-package oxiorapp.healthapp.Home;
+package oxiorapp.healthapp.Utilities;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;

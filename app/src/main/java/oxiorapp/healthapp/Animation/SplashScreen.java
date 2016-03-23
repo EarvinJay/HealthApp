@@ -1,4 +1,4 @@
-package oxiorapp.healthapp;
+package oxiorapp.healthapp.Animation;
 
 /**
  * Created by srthg on 3/21/2016.
@@ -8,7 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import oxiorapp.healthapp.Home.HealthApp;
+import oxiorapp.healthapp.Utilities.HealthApp;
+import oxiorapp.healthapp.R;
 
 public class SplashScreen extends Activity {
 

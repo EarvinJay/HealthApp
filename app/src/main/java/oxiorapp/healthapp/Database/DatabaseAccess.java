@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import oxiorapp.healthapp.entities.Food;
-
 /**
  * Created by BSIT on 3/8/2016.
  */
@@ -105,16 +103,26 @@ public class DatabaseAccess {
     * Getting a single food name
     * */
 
-     public Food getFoodAvailability(String foods,String bloodType) {
-         Food food;
-             Cursor cursor = database.rawQuery(
-                     "SELECT type_a FROM Foods WHERE food_name = '" + foods + "'",
+     public String getFoodAvailability(String foods,String bloodType) {
+
+         StringBuilder foodAvailability = new StringBuilder();
+         String foodResult;
+         int foodIndex;
+
+         Cursor cursor = database.rawQuery(
+                     "SELECT TYPE_A FROM Foods WHERE FOOD_NAME = '" + foods + "'",
                      null);
-             if (cursor != null)
-                 cursor.moveToFirst();
-                food = new Food( cursor.getString(0));
-             cursor.close();
-         return food;
+
+         cursor.moveToFirst();
+         while (cursor.moveToNext()) {
+             foodIndex = cursor.getColumnIndex(foods);
+             foodResult=cursor.getString(foodIndex);
+             foodAvailability.append(foodResult);
+
+         }
+         cursor.close();
+         return foodAvailability.toString();
+
      }
 
 
