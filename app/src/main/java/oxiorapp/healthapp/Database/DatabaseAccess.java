@@ -110,7 +110,7 @@ public class DatabaseAccess {
          int foodIndex;
 
          Cursor cursor = database.rawQuery(
-                     "SELECT TYPE_A FROM Foods WHERE FOOD_NAME = '" + foods + "'",
+                     "SELECT TYPE_A FROM Foods WHERE FOOD_NAME = '" + foods + "';",
                      null);
 
          cursor.moveToFirst();
