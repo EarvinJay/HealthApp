@@ -109,18 +109,18 @@ public class DatabaseAccess {
          String foodResult;
          int foodIndex;
 
-         Cursor cursor = database.rawQuery(
-                     "SELECT TYPE_A FROM Foods WHERE FOOD_NAME = '" + foods + "';",
+         Cursor cursor1 = database.rawQuery(
+                     "SELECT TYPE_A FROM Foods WHERE FOOD_NAME = '" + foods + "'",
                      null);
 
-         cursor.moveToFirst();
-         while (cursor.moveToNext()) {
-             foodIndex = cursor.getColumnIndex(foods);
-             foodResult=cursor.getString(foodIndex);
+         cursor1.moveToFirst();
+         while (cursor1.moveToNext()) {
+             foodIndex = cursor1.getColumnIndex(foods);
+             foodResult=cursor1.getString(foodIndex);
              foodAvailability.append(foodResult);
 
          }
-         cursor.close();
+         cursor1.close();
          return foodAvailability.toString();
 
      }

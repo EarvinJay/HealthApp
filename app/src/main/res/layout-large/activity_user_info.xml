@@ -171,13 +171,14 @@
         android:layout_toLeftOf="@+id/foodpref"
         android:layout_toStartOf="@+id/foodpref" />
 
-    <Button
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Food Preferences"
-        android:id="@+id/btnFoodPreference"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="onClick"/>
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/search"
+        android:onClick="Search"
+        android:layout_below="@+id/textView7"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
