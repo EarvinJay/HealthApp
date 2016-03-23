@@ -36,6 +36,8 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".Home.UserInfo"
             android:screenOrientation="locked"/>
+        <activity android:name=".Home.Search"
+            android:screenOrientation="locked"/>
     </application>
 
 </manifest>

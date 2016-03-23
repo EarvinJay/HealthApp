@@ -3,11 +3,12 @@ package oxiorapp.healthapp.Home;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import oxiorapp.healthapp.R;
 
-public class UserInfo extends AppCompatActivity {
+public class UserInfo extends AppCompatActivity implements View.OnClickListener {
     String dates,weights,heights,bloodtypes,allergy,foodprefs,weightobjs;
     TextView txtdate,txtweight,txtheight,txtbloodtype,txtallergies,txtfoodpref,txtweightobj;
     @Override
@@ -41,7 +42,13 @@ public class UserInfo extends AppCompatActivity {
         txtweightobj=(TextView) findViewById(R.id.weightobj);
         txtweightobj.setText(weightobjs);
 
+    }
 
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this,Search.class);
+        intent.putExtra("bloodType",txtbloodtype.getText().toString());
+        startActivity(intent);
 
     }
 }
