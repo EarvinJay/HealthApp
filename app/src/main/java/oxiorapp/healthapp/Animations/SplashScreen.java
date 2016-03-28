@@ -1,4 +1,4 @@
-package oxiorapp.healthapp.Animation;
+package oxiorapp.healthapp.Animations;
 
 /**
  * Created by srthg on 3/21/2016.

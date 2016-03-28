@@ -13,7 +13,21 @@ public class Food {
     private String food;
     private String bloodType;
 
+    public String getBloodType() {
+        return bloodType;
+    }
 
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Food() {
     }
@@ -22,8 +36,10 @@ public class Food {
         this.food = food;
     }
 
-    public Food(int id, String bloodType) {
-        this.id = id;
+
+
+    public Food(String name, String bloodType) {
+        this.name = name;
         this.bloodType = bloodType;
     }
 
