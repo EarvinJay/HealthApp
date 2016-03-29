@@ -36,14 +36,25 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
 
     public void showDatabaseAccess(){
 //        Intent intent=getIntent();
-        String food= mFoodName.getText().toString();
+        String getFood= mFoodName.getText().toString();
+        String foodList [] = new String[R.array.FoodName];
+        String typeACompat [] = new String[R.array.Type_A];
 //        String bloodType=intent.getStringExtra("bloodType");
 
-        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-        databaseAccess.open();
-        String foodAvailability = databaseAccess.findFoodResult(food);
-        databaseAccess.close();
-        Toast.makeText(Search.this, foodAvailability, Toast.LENGTH_SHORT).show();
+//        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+//        databaseAccess.open();
+//        String foodAvailability = databaseAccess.findFoodResult(food);
+//        databaseAccess.close();
+//        Toast.makeText(Search.this, foodAvailability, Toast.LENGTH_SHORT).show();
+        for(int i = 0 ;i < foodList.length;i++){
+            if (getFood.contentEquals(foodList[i])){
+                    Toast.makeText(Search.this, typeACompat[i], Toast.LENGTH_SHORT).show();
+                break;
+            }
+
+        }
+
+
     }
 
     public void init(){
@@ -65,6 +76,10 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
         databaseAccess.close();
         mListView.setAdapter(foodInfoAdapter);
     }
+
+
+
+
 
 
 }

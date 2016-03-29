@@ -40,7 +40,7 @@ public class DatabaseAccess {
     }
     //Get all the data in the database
     public ArrayList<Food> getFood() {
-        ArrayList<Food> food = new ArrayList<Food>();
+        ArrayList<Food> food = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT * FROM Foods", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -53,7 +53,7 @@ public class DatabaseAccess {
 
     public String findFoodResult(String foods){
         Cursor cursor = database.rawQuery(
-                 "SELECT * FROM Foods WHERE FOOD_NAME='"+foods+"'",null);
+                 "SELECT Compatability FROM TYPE_A WHERE Food_Name='" + foods + "'",null);
         Food food = new Food();
         if (cursor != null) {
             cursor.moveToFirst();

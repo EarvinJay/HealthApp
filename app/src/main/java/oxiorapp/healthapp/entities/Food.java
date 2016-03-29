@@ -12,6 +12,15 @@ public class Food {
     private String weight;
     private String food;
     private String bloodType;
+    private String compat;
+
+    public String getCompat() {
+        return compat;
+    }
+
+    public void setCompat(String compat) {
+        this.compat = compat;
+    }
 
     public String getBloodType() {
         return bloodType;
@@ -35,7 +44,6 @@ public class Food {
     public Food(String food) {
         this.food = food;
     }
-
 
 
     public Food(String name, String bloodType) {
