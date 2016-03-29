@@ -2,6 +2,7 @@ package oxiorapp.healthapp.Utilities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,13 +25,16 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
     ListView mListView;
     EditText mFoodName;
     Button mClickSearch;
-
+    String bloodtype;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        Intent intent=getIntent();
+        bloodtype=intent.getStringExtra("bloodType");
 
+        Toast.makeText(this,bloodtype,Toast.LENGTH_SHORT).show();
         init();
         FoodList();
     }
