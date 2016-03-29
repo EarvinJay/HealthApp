@@ -1,5 +1,7 @@
 package oxiorapp.healthapp.Utilities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -45,7 +47,16 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
             int i = Arrays.asList(foodList).indexOf(getFood);
             result = typeACompat[i];
         }
-            Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+        new AlertDialog.Builder(this)
+                .setTitle("RESULT")
+                .setMessage(result)
+                .setCancelable(false)
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Whatever...
+                    }
+                }).create().show();
 
 
     }
