@@ -1,7 +1,6 @@
 package oxiorapp.healthapp.Utilities;
 
-import android.content.Context;
-import android.database.Cursor;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.Arrays;
 
 import oxiorapp.healthapp.Adapters.FoodInfoAdapter;
 import oxiorapp.healthapp.Database.DatabaseAccess;
@@ -21,8 +22,6 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
     ListView mListView;
     EditText mFoodName;
     Button mClickSearch;
-    Cursor mCursor;
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,24 +34,18 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
     }
 
     public void showDatabaseAccess(){
-//        Intent intent=getIntent();
+        Resources res = getResources();
+        Resources res1 = getResources();
+        String result = "Not Available in the Database";
         String getFood= mFoodName.getText().toString();
-        String foodList [] = new String[R.array.FoodName];
-        String typeACompat [] = new String[R.array.Type_A];
-//        String bloodType=intent.getStringExtra("bloodType");
+        String foodList [] = res.getStringArray(R.array.FoodName);
+        String typeACompat [] = res1.getStringArray(R.array.Type_A);
 
-//        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-//        databaseAccess.open();
-//        String foodAvailability = databaseAccess.findFoodResult(food);
-//        databaseAccess.close();
-//        Toast.makeText(Search.this, foodAvailability, Toast.LENGTH_SHORT).show();
-        for(int i = 0 ;i < foodList.length;i++){
-            if (getFood.contentEquals(foodList[i])){
-                    Toast.makeText(Search.this, typeACompat[i], Toast.LENGTH_SHORT).show();
-                break;
-            }
-
+        if(Arrays.asList(foodList).contains(getFood)) {
+            int i = Arrays.asList(foodList).indexOf(getFood);
+            result = typeACompat[i];
         }
+            Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
 
 
     }
