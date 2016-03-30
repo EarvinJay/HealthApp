@@ -77,26 +77,14 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtfoodpref"
-        android:hint="Food Preferences"
-        android:layout_alignLeft="@+id/txtallergies"
-        android:layout_alignStart="@+id/txtallergies"
-        android:layout_below="@+id/txtallergies"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/txtweightobj"
-        android:hint="Wieght Objectiv e( loss/gain )"
-        android:layout_below="@+id/txtfoodpref"
-        android:layout_alignLeft="@+id/txtfoodpref"
-        android:layout_alignStart="@+id/txtfoodpref"
+        android:hint="Wieght Objective( loss/gain/maintain )"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/txtallergies"
+        android:layout_alignLeft="@+id/txtallergies"
+        android:layout_alignStart="@+id/txtallergies" />
 
     <Button
         android:layout_width="wrap_content"

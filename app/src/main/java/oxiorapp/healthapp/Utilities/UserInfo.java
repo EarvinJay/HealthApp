@@ -9,8 +9,8 @@ import android.widget.TextView;
 import oxiorapp.healthapp.R;
 
 public class UserInfo extends AppCompatActivity {
-    String dates,weights,heights,bloodtypes,allergy,foodprefs,weightobjs;
-    TextView txtdate,txtweight,txtheight,txtbloodtype,txtallergies,txtfoodpref,txtweightobj;
+    String dates,weights,heights,bloodtypes,allergy,weightobjs;
+    TextView txtdate,txtweight,txtheight,txtbloodtype,txtallergies,txtweightobj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,6 @@ public class UserInfo extends AppCompatActivity {
         heights=intent.getStringExtra("data_height");
         bloodtypes=intent.getStringExtra("data_bloodtype");
         allergy=intent.getStringExtra("data_allergies");
-        foodprefs=intent.getStringExtra("data_foodpref");
         weightobjs=intent.getStringExtra("data_weightobj");
 
 
@@ -37,8 +36,6 @@ public class UserInfo extends AppCompatActivity {
         txtbloodtype.setText(bloodtypes);
         txtallergies=(TextView) findViewById(R.id.allergy);
         txtallergies.setText(allergy);
-        txtfoodpref=(TextView) findViewById(R.id.foodpref);
-        txtfoodpref.setText(foodprefs);
         txtweightobj=(TextView) findViewById(R.id.weightobj);
         txtweightobj.setText(weightobjs);
 

@@ -10,8 +10,8 @@ import oxiorapp.healthapp.R;
 
 public class Home extends AppCompatActivity {
 
-    private EditText date, weight, height, bloodtype, allergies, foodpref, weightobj;
-    String dates, weights, heights, bloodtypes, allergy, foodprefs, weightobjs;
+    private EditText date, weight, height, bloodtype, allergies, weightobj;
+    String dates, weights, heights, bloodtypes, allergy, weightobjs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,6 @@ public class Home extends AppCompatActivity {
         bloodtypes = bloodtype.getText().toString();
         allergies = (EditText) findViewById(R.id.txtallergies);
         allergy = allergies.getText().toString();
-        foodpref = (EditText) findViewById(R.id.txtfoodpref);
-        foodprefs = foodpref.getText().toString();
         weightobj = (EditText) findViewById(R.id.txtweightobj);
         weightobjs = weightobj.getText().toString();
 
@@ -59,9 +57,6 @@ public class Home extends AppCompatActivity {
         else if(allergy.isEmpty())
         {
             bloodtype.setError("Allergies must not be empty");
-        } else if(foodprefs.isEmpty())
-        {
-            foodpref.setError("Food Preferences must not be empty");
         }
         else if(weightobjs.isEmpty())
         {
@@ -76,7 +71,6 @@ public class Home extends AppCompatActivity {
             intent.putExtra("data_height", heights);
             intent.putExtra("data_bloodtype", bloodtypes);
             intent.putExtra("data_allergies", allergy);
-            intent.putExtra("data_foodpref", foodprefs);
             intent.putExtra("data_weightobj", weightobjs);
             startActivity(intent);
         }
