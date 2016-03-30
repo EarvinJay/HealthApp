@@ -48,4 +48,12 @@ public class UserInfo extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void logout(View view)
+    {
+        Intent intent =new Intent(this,HealthApp.class);
+        startActivity(intent);
+
+
+    }
 }

@@ -5,21 +5,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import oxiorapp.healthapp.R;
 
 public class Home extends AppCompatActivity {
 
     private EditText date, weight, height, bloodtype, allergies, weightobj;
-    String dates, weights, heights, bloodtypes, allergy, weightobjs;
+    String dates, weights, heights, bloodtypes, allergy, weightobjs,name;
+    private TextView hello;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+Intent intent= getIntent();
+       name= intent.getStringExtra("username");
 
-
-
+hello=(TextView) findViewById(R.id.hellouser);
+hello.setText("Hello "+name.toString()+", Good Day! \n Please fill-up the following:");
 
     }
 
