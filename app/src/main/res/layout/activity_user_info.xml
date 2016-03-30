@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Home.UserInfo"
-    android:background="@drawable/background">
+    android:background="@drawable/greenback">
 
     <TextView
         android:layout_width="wrap_content"
@@ -156,8 +156,9 @@
         android:layout_gravity="bottom|end"
         android:src="@drawable/search"
         android:onClick="Search"
-        android:layout_below="@+id/textView7"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
