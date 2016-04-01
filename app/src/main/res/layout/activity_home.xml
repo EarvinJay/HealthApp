@@ -18,9 +18,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/hellouser"
+        android:textAlignment="center"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/btnstart"
-        android:layout_alignStart="@+id/btnstart" />
+        android:layout_alignRight="@+id/btnstart"
+        android:layout_alignEnd="@+id/btnstart" />
 
     <EditText
         android:layout_width="300dp"
