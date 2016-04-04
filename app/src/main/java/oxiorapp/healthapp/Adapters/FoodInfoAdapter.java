@@ -43,7 +43,7 @@ public class FoodInfoAdapter extends ArrayAdapter<Food>{
         //TextView compat = (TextView) rowView.findViewById(R.id.txtCompatability);
 
         // 4. Set the text for textView
-        foodName.setText(foodsArrayList.get(position).getName());
+        foodName.setText(foodsArrayList.get(position).getFood());
       //  compat.setText(foodsArrayList.get(position).getBloodType());
 
         // 5. retrn rowView

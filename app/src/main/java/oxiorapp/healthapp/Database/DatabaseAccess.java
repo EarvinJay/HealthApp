@@ -40,6 +40,7 @@ public class DatabaseAccess {
     }
     //Get all the data in the database
     public ArrayList<Food> getFood() {
+
         ArrayList<Food> food = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT * FROM Foods", null);
         cursor.moveToFirst();
@@ -50,23 +51,39 @@ public class DatabaseAccess {
         cursor.close();
         return food;
     }
-//  Not use problem in fetching data
-    public String findFoodResult(String foods){
-        Cursor cursor = database.rawQuery(
-                 "SELECT Compatability FROM TYPE_A WHERE Food_Name='" + foods + "'",null);
-        Food food = new Food();
-        if (cursor != null) {
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
-                food.setFood(cursor.getString(cursor.getColumnIndex(foods)));
-                System.out.println(cursor.getString(cursor.getColumnIndex(foods)));
-                cursor.moveToNext();
-            }
-        }
-        if (cursor != null)
-            cursor.close();
 
-        return food.getFood();
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Not use.... Problem in fetching data
+//    public String findFoodResult(String foods){
+//        Cursor cursor = database.rawQuery(
+//                 "SELECT Compatability FROM TYPE_A WHERE Food_Name='" + foods + "'",null);
+//        Food food = new Food();
+//        if (cursor != null) {
+//            cursor.moveToFirst();
+//            while (!cursor.isAfterLast()) {
+//                food.setFood(cursor.getString(cursor.getColumnIndex(foods)));
+//                System.out.println(cursor.getString(cursor.getColumnIndex(foods)));
+//                cursor.moveToNext();
+//            }
+//        }
+//        if (cursor != null)
+//            cursor.close();
+//
+//        return food.getFood();
+//    }
 
 }
