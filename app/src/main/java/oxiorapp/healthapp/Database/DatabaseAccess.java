@@ -44,7 +44,7 @@ public class DatabaseAccess {
         Cursor cursor = database.rawQuery("SELECT * FROM Foods", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            food.add( new Food(cursor.getString(1), cursor.getString(4)));
+            food.add( new Food(cursor.getString(1)));
             cursor.moveToNext();
         }
         cursor.close();

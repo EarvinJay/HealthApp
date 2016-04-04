@@ -33,114 +33,34 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
 
         Intent intent=getIntent();
         bloodtype=intent.getStringExtra("bloodType");
+
         Toast.makeText(this,bloodtype,Toast.LENGTH_SHORT).show();
         init();
         FoodList();
-
-
-
     }
 
     public void showDatabaseAccess(){
-        switch(bloodtype.toString())
-        {
-            case "A":
-                Resources res = getResources();
-                Resources res1 = getResources();
-                String result = "Not Available in the Database";
-                String getFood= mFoodName.getText().toString();
-                String foodList [] = res.getStringArray(R.array.FoodName);
-                String typeACompat [] = res1.getStringArray(R.array.Type_A);
+        Resources res = getResources();
+        Resources res1 = getResources();
+        String result = "Not Available in the Database";
+        String getFood= mFoodName.getText().toString();
+        String foodList [] = res.getStringArray(R.array.FoodName);
+        String typeACompat [] = res1.getStringArray(R.array.Type_A);
 
-                if(Arrays.asList(foodList).contains(getFood)) {
-                    int i = Arrays.asList(foodList).indexOf(getFood);
-                    result = typeACompat[i];
-                }
-                new AlertDialog.Builder(this)
-                        .setTitle("RESULT")
-                        .setMessage(result)
-                        .setCancelable(false)
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Whatever...
-                            }
-                        }).create().show();
-
-                break;
-            case "B":
-                res = getResources();
-                res1 = getResources();
-                result = "Not Available in the Database";
-               getFood= mFoodName.getText().toString();
-                foodList = res.getStringArray(R.array.FoodName);
-                String typeCompat [] = res1.getStringArray(R.array.Type_B);
-
-                if(Arrays.asList(foodList).contains(getFood)) {
-                    int i = Arrays.asList(foodList).indexOf(getFood);
-                    result = typeCompat[i];
-                }
-                new AlertDialog.Builder(this)
-                        .setTitle("RESULT")
-                        .setMessage(result)
-                        .setCancelable(false)
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Whatever...
-                            }
-                        }).create().show();
-
-                break;
-            case "AB":
-                res = getResources();
-                res1 = getResources();
-                result = "Not Available in the Database";
-                getFood= mFoodName.getText().toString();
-                foodList = res.getStringArray(R.array.FoodName);
-                typeCompat = res1.getStringArray(R.array.Type_AB);
-
-                if(Arrays.asList(foodList).contains(getFood)) {
-                    int i = Arrays.asList(foodList).indexOf(getFood);
-                    result = typeCompat[i];
-                }
-                new AlertDialog.Builder(this)
-                        .setTitle("RESULT")
-                        .setMessage(result)
-                        .setCancelable(false)
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Whatever...
-                            }
-                        }).create().show();
-
-                break;
-            case "O":
-                res = getResources();
-                res1 = getResources();
-                result = "Not Available in the Database";
-                getFood= mFoodName.getText().toString();
-                foodList = res.getStringArray(R.array.FoodName);
-                typeCompat = res1.getStringArray(R.array.Type_O);
-
-                if(Arrays.asList(foodList).contains(getFood)) {
-                    int i = Arrays.asList(foodList).indexOf(getFood);
-                    result = typeCompat[i];
-                }
-                new AlertDialog.Builder(this)
-                        .setTitle("RESULT")
-                        .setMessage(result)
-                        .setCancelable(false)
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Whatever...
-                            }
-                        }).create().show();
-
-                break;
+        if(Arrays.asList(foodList).contains(getFood)) {
+            int i = Arrays.asList(foodList).indexOf(getFood);
+            result = typeACompat[i];
         }
+        new AlertDialog.Builder(this)
+                .setTitle("RESULT")
+                .setMessage(result)
+                .setCancelable(false)
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Whatever...
+                    }
+                }).create().show();
 
 
     }
@@ -154,7 +74,6 @@ public class Search extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-
         showDatabaseAccess();
     }
 
