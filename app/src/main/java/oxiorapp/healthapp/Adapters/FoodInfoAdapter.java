@@ -40,11 +40,11 @@ public class FoodInfoAdapter extends ArrayAdapter<Food>{
 
         // 3. Get the two text view from the rowView
         TextView foodName = (TextView) rowView.findViewById(R.id.txtFoodName);
-        TextView compat = (TextView) rowView.findViewById(R.id.txtCompatability);
+        //TextView compat = (TextView) rowView.findViewById(R.id.txtCompatability);
 
         // 4. Set the text for textView
         foodName.setText(foodsArrayList.get(position).getName());
-        compat.setText(foodsArrayList.get(position).getBloodType());
+      //  compat.setText(foodsArrayList.get(position).getBloodType());
 
         // 5. retrn rowView
         return rowView;

@@ -50,7 +50,7 @@ public class DatabaseAccess {
         cursor.close();
         return food;
     }
-
+//  Not use problem in fetching data
     public String findFoodResult(String foods){
         Cursor cursor = database.rawQuery(
                  "SELECT Compatability FROM TYPE_A WHERE Food_Name='" + foods + "'",null);
